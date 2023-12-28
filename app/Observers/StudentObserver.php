@@ -45,7 +45,8 @@ class StudentObserver
      */
     public function deleted(Student $student): void
     {
-        //
+        $student->deleted_by = $this->userID;
+        $student->update();
     }
 
     /**

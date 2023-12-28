@@ -44,7 +44,8 @@ class ClassesObserver
      */
     public function deleted(Classes $classes): void
     {
-        //
+        $classes->deleted_by = $this->userID;
+        $classes->update();
     }
 
     /**

@@ -45,7 +45,8 @@ class SectionObserver
      */
     public function deleted(Section $section): void
     {
-        //
+        $section->deleted_by = $this->userID;
+        $section->update();
     }
 
     /**
