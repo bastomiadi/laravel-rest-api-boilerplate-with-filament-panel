@@ -65,7 +65,7 @@ class SpatieSeeder extends Seeder
         // create roles and assign created permissions
 
         // or may be done by chaining
-        $role = Role::create(['name' => 'user'])
+        $role = Role::create(['name' => 'panel_user'])
             ->givePermissionTo([
                 'view_classes',
                 'view_any_classes',
