@@ -2,19 +2,19 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ClassesResource\Pages;
-use App\Filament\Resources\ClassesResource\RelationManagers;
-use App\Models\Classes;
 use Filament\Forms;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Columns\TextColumn;
+use App\Models\Classes;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ClassesResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ClassesResource\RelationManagers;
 
 class ClassesResource extends Resource
 {
@@ -39,8 +39,9 @@ class ClassesResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->sortable(),
-                TextColumn::make('sections.name'),
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('sections.name')->sortable()->searchable(),
                 TextColumn::make('students_count')
                     ->counts('students')
                     ->label('Students Count'),

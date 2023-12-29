@@ -2,16 +2,16 @@
 
 namespace App\Filament\Pages\Auth;
 
-use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
-use Filament\Facades\Filament;
-use Filament\Forms\Components\Component;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
-use Filament\Http\Responses\Auth\Contracts\RegistrationResponse;
-use Filament\Notifications\Notification;
 use Filament\Pages\Page;
-use Filament\Pages\Auth\Register as BaseRegister;
+use Filament\Facades\Filament;
 use Spatie\Permission\Models\Role;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Component;
+use Filament\Notifications\Notification;
+use Filament\Pages\Auth\Register as BaseRegister;
+use Filament\Http\Responses\Auth\Contracts\RegistrationResponse;
+use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
 
 class Register extends BaseRegister
 {

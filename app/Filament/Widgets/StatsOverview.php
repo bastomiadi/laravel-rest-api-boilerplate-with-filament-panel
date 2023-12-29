@@ -5,8 +5,8 @@ namespace App\Filament\Widgets;
 use App\Models\Classes;
 use App\Models\Section;
 use App\Models\Student;
-use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 
 class StatsOverview extends BaseWidget
 {

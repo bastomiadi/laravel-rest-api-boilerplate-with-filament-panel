@@ -2,21 +2,21 @@
 
 namespace App\Filament\Widgets;
 
-use App\Exports\StudentsExport;
+use Filament\Tables;
 use App\Models\Classes;
 use App\Models\Section;
 use App\Models\Student;
-use Filament\Forms\Components\Select;
-use Filament\Tables;
-use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\BulkAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
-use Filament\Widgets\TableWidget as BaseWidget;
+use App\Exports\StudentsExport;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Filters\Filter;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Actions\BulkAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Filament\Widgets\TableWidget as BaseWidget;
 
 class LatestStudents extends BaseWidget
 {

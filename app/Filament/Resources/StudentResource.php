@@ -2,27 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Exports\StudentsExport;
-use App\Filament\Resources\StudentResource\Pages;
-use App\Filament\Resources\StudentResource\RelationManagers;
+use Filament\Forms;
+use Filament\Tables;
 use App\Models\Classes;
 use App\Models\Section;
 use App\Models\Student;
-use Filament\Forms;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\BulkAction;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
+use App\Exports\StudentsExport;
+use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Filters\Filter;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Actions\BulkAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\DeleteAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use App\Filament\Resources\StudentResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\StudentResource\RelationManagers;
 
 class StudentResource extends Resource
 {
@@ -80,11 +80,11 @@ class StudentResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->toggleable(),
-                // TextColumn::make('address')
-                //     ->sortable()
-                //     ->searchable()
-                //     ->toggleable()
-                //     ->wrap(),
+                TextColumn::make('address')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable()
+                    ->wrap(),
 
                 TextColumn::make('class.name')
                     ->sortable()
