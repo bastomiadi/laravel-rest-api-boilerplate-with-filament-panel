@@ -2,10 +2,16 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Classes;
+use App\Models\Product;
+use App\Models\Review;
 use App\Models\Section;
 use App\Models\Student;
+use App\Observers\CategoryObserver;
 use App\Observers\ClassesObserver;
+use App\Observers\ProductObserver;
+use App\Observers\ReviewObserver;
 use App\Observers\SectionObserver;
 use App\Observers\StudentObserver;
 use Illuminate\Auth\Events\Registered;
@@ -34,6 +40,9 @@ class EventServiceProvider extends ServiceProvider
         Classes::observe(ClassesObserver::class);
         Section::observe(SectionObserver::class);
         Student::observe(StudentObserver::class);
+        Category::observe(CategoryObserver::class);
+        Product::observe(ProductObserver::class);
+        Review::observe(ReviewObserver::class);
     }
 
     /**
@@ -50,6 +59,6 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $observers = [
-        //Classes::class => [ClassesObserver::class],
+        // Classes::class => [ClassesObserver::class],
     ];
 }

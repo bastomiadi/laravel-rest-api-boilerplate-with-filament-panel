@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Permission\Traits\HasRoles;
 
 class Section extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, HasRoles;
+
+    protected $guarded = [];
 
     /**
      * The attributes that are mass assignable.
@@ -27,6 +30,12 @@ class Section extends Model
 
     public function students()
     {
-        return $this->hasMany(Student::class);
+        return $this->hasMany(Student::class, 'section_id');
     }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+    
 }

@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Classes;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ClassesPolicy
@@ -18,6 +18,8 @@ class ClassesPolicy
      */
     public function viewAny(User $user): bool
     {
+        return true;
+        return optional(true);
         return $user->can('view_any_classes');
     }
 
@@ -30,6 +32,12 @@ class ClassesPolicy
      */
     public function view(User $user, Classes $classes): bool
     {
+        return true;
+        // admin can view all category
+        if ($user->hasRole('super_admin')) {
+            return true;  
+        }
+        
         return $user->can('view_classes');
     }
 
