@@ -62,6 +62,45 @@ class SpatieSeeder extends Seeder
         Permission::create(['name' => 'force_delete_student']);
         Permission::create(['name' => 'force_delete_any_student']);
 
+        Permission::create(['name' => 'view_products']);
+        Permission::create(['name' => 'view_any_products']);
+        Permission::create(['name' => 'create_products']);
+        Permission::create(['name' => 'update_products']);
+        Permission::create(['name' => 'restore_products']);
+        Permission::create(['name' => 'restore_any_products']);
+        Permission::create(['name' => 'replicate_products']);
+        Permission::create(['name' => 'reorder_products']);
+        Permission::create(['name' => 'delete_products']);
+        Permission::create(['name' => 'delete_any_products']);
+        Permission::create(['name' => 'force_delete_products']);
+        Permission::create(['name' => 'force_delete_any_products']);
+
+        Permission::create(['name' => 'view_categories']);
+        Permission::create(['name' => 'view_any_categories']);
+        Permission::create(['name' => 'create_categories']);
+        Permission::create(['name' => 'update_categories']);
+        Permission::create(['name' => 'restore_categories']);
+        Permission::create(['name' => 'restore_any_categories']);
+        Permission::create(['name' => 'replicate_categories']);
+        Permission::create(['name' => 'reorder_categories']);
+        Permission::create(['name' => 'delete_categories']);
+        Permission::create(['name' => 'delete_any_categories']);
+        Permission::create(['name' => 'force_delete_categories']);
+        Permission::create(['name' => 'force_delete_any_categories']);
+
+        Permission::create(['name' => 'view_reviews']);
+        Permission::create(['name' => 'view_any_reviews']);
+        Permission::create(['name' => 'create_reviews']);
+        Permission::create(['name' => 'update_reviews']);
+        Permission::create(['name' => 'restore_reviews']);
+        Permission::create(['name' => 'restore_any_reviews']);
+        Permission::create(['name' => 'replicate_reviews']);
+        Permission::create(['name' => 'reorder_reviews']);
+        Permission::create(['name' => 'delete_reviews']);
+        Permission::create(['name' => 'delete_any_reviews']);
+        Permission::create(['name' => 'force_delete_reviews']);
+        Permission::create(['name' => 'force_delete_any_reviews']);
+
         // create roles and assign created permissions
 
         // or may be done by chaining
@@ -119,6 +158,46 @@ class SpatieSeeder extends Seeder
                 'delete_any_student',
                 'force_delete_student',
                 'force_delete_any_student',
+
+                'view_products',
+                'view_any_products',
+                'create_products',
+                'update_products',
+                'restore_products',
+                'restore_any_products',
+                'replicate_products',
+                'reorder_products',
+                'delete_products',
+                'delete_any_products',
+                'force_delete_products',
+                'force_delete_any_products',
+
+                'view_categories',
+                'view_any_categories',
+                'create_categories',
+                'update_categories',
+                'restore_categories',
+                'restore_any_categories',
+                'replicate_categories',
+                'reorder_categories',
+                'delete_categories',
+                'delete_any_categories',
+                'force_delete_categories',
+                'force_delete_any_categories',
+
+                'view_reviews',
+                'view_any_reviews',
+                'create_reviews',
+                'update_reviews',
+                'restore_reviews',
+                'restore_any_reviews',
+                'replicate_reviews',
+                'reorder_reviews',
+                'delete_reviews',
+                'delete_any_reviews',
+                'force_delete_reviews',
+                'force_delete_any_reviews',
+                
             ]);
 
         //$role = Role::create(['name' => 'superadmin']);

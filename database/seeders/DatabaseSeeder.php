@@ -17,7 +17,11 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ClassesSeeder::class,
             SectionSeeder::class,
-            StudentSeeder::class
+            StudentSeeder::class,
+            
+            CategorySeeder::class,
+            ProductSeeder::class,
+            ReviewSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
