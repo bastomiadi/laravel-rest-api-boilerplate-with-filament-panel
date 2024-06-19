@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
         Product::withoutEvents(function ()  {        
             // normally
             Product::factory()
-            ->count(10000)
+            ->count(1000)
             ->create();
         });
     }
