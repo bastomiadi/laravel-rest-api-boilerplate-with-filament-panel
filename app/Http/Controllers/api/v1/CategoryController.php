@@ -20,7 +20,7 @@ class CategoryController extends BaseController
     {
         return CategoryResource::collection(
             $category
-            ->with(['products','user'])
+            ->with(['products', 'user'])
             ->filterByName($request->name)
             ->filterByDetail($request->detail)
             ->paginate(10)

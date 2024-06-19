@@ -16,27 +16,25 @@ class ClassesPolicy
      * @param  \App\Models\User  $user
      * @return bool
      */
-    public function viewAny(User $user): bool
+    public function viewAny(?User $user): bool
     {
-        return true;
-        return optional(true);
-        return $user->can('view_any_classes');
+        return true;   
+        // return $user->can('view_any_classes');
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function view(User $user, Classes $classes): bool
+    public function view(User $user, Classes $class): bool
     {
-        return true;
-        // admin can view all category
-        if ($user->hasRole('super_admin')) {
-            return true;  
-        }
+        // admin can view all classes
+        // if ($user->hasRole('super_admin')) {
+        //     return true;  
+        // }
         
         return $user->can('view_classes');
     }
@@ -56,10 +54,10 @@ class ClassesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function update(User $user, Classes $classes): bool
+    public function update(User $user, Classes $class): bool
     {
         return $user->can('update_classes');
     }
@@ -68,10 +66,10 @@ class ClassesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function delete(User $user, Classes $classes): bool
+    public function delete(User $user, Classes $class): bool
     {
         return $user->can('delete_classes');
     }
@@ -91,10 +89,10 @@ class ClassesPolicy
      * Determine whether the user can permanently delete.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function forceDelete(User $user, Classes $classes): bool
+    public function forceDelete(User $user, Classes $class): bool
     {
         return $user->can('force_delete_classes');
     }
@@ -114,10 +112,10 @@ class ClassesPolicy
      * Determine whether the user can restore.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function restore(User $user, Classes $classes): bool
+    public function restore(User $user, Classes $class): bool
     {
         return $user->can('restore_classes');
     }
@@ -137,10 +135,10 @@ class ClassesPolicy
      * Determine whether the user can replicate.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Classes  $classes
+     * @param  \App\Models\Classes  $class
      * @return bool
      */
-    public function replicate(User $user, Classes $classes): bool
+    public function replicate(User $user, Classes $class): bool
     {
         return $user->can('replicate_classes');
     }

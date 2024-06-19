@@ -52,7 +52,7 @@ class ProductPolicy
      */
     public function create(User $user)
     {
-        if ($user->can('create product')) {
+        if ($user->can('create_products')) {
             return true;
         }
     }

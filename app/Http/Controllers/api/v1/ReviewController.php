@@ -17,7 +17,7 @@ class ReviewController extends BaseController
 
     public function index(Review $review)
     {   
-        return ReviewResource::collection($review->with(['product','user'])->paginate(10));
+        return ReviewResource::collection($review->with(['product', 'user'])->paginate(10));
     }
 
     public function store(ReviewRequest $request, Review $review)

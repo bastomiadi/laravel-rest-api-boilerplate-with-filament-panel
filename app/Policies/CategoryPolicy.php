@@ -49,7 +49,7 @@ class CategoryPolicy
      */
     public function create(User $user)
     {
-        if ($user->can('create category')) {
+        if ($user->can('create_categories')) {
             return true;
         }
     }

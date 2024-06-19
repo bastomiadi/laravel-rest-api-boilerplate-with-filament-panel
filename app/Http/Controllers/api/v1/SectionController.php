@@ -13,13 +13,13 @@ class SectionController extends BaseController
     public function __construct()
     {
         $this->middleware(['auth:sanctum'])->except('index');
-        // $this->authorizeResource(Section::class, 'Section');
+        $this->authorizeResource(Section::class, 'section');
     }
 
-    public function index(Section $Section, Request $request)
+    public function index(Section $section, Request $request)
     {
         return SectionResource::collection(
-            $Section
+            $section
             ->with(['class', 'user', 'class.students'])
             // ->filterByName($request->name)
             // ->filterByDetail($request->detail)
@@ -27,36 +27,36 @@ class SectionController extends BaseController
         );
     }
 
-    public function store(SectionRequest $request, Section $Section)
+    public function store(SectionRequest $request, Section $section)
     {
         return response([
             'data' => new SectionResource(
-                $Section::create(
+                $section::create(
                     $request->all()
                 )
             )
         ],Response::HTTP_CREATED);
     }
 
-    public function show(Section $Section)
+    public function show(Section $section)
     {
-        return new SectionResource($Section);
+        return new SectionResource($section);
     }
     
-    public function update(SectionRequest $request, Section $Section)
+    public function update(SectionRequest $request, Section $section)
     {   
 
-        $Section->update($request->all());
+        $section->update($request->all());
 
         return response([
-            'data' => new SectionResource($Section)
+            'data' => new SectionResource($section)
         ],Response::HTTP_CREATED);
 
     }
    
-    public function destroy(Section $Section)
+    public function destroy(Section $section)
     {
-        $Section->delete();
+        $section->delete();
         return response(null,Response::HTTP_NO_CONTENT);
     }
 

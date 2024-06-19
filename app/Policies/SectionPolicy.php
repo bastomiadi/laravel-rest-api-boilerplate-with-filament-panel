@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Section;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SectionPolicy
@@ -16,9 +16,10 @@ class SectionPolicy
      * @param  \App\Models\User  $user
      * @return bool
      */
-    public function viewAny(User $user): bool
+    public function viewAny(?User $user): bool
     {
-        return $user->can('view_any_section');
+        return true;
+        // return $user->can('view_any_section');
     }
 
     /**

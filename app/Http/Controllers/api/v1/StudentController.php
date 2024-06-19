@@ -13,13 +13,13 @@ class StudentController extends BaseController
     public function __construct()
     {
         $this->middleware(['auth:sanctum'])->except('index');
-        // $this->authorizeResource(Student::class, 'Student');
+        $this->authorizeResource(Student::class, 'student');
     }
 
-    public function index(Student $Student, Request $request)
+    public function index(Student $student, Request $request)
     {
         return StudentResource::collection(
-            $Student
+            $student
             ->with(['class', 'section', 'user', 'class.user', 'section.user'])
             // ->filterByName($request->name)
             // ->filterByDetail($request->detail)
@@ -27,36 +27,36 @@ class StudentController extends BaseController
         );
     }
 
-    public function store(StudentRequest $request, Student $Student)
+    public function store(StudentRequest $request, Student $student)
     {
         return response([
             'data' => new StudentResource(
-                $Student::create(
+                $student::create(
                     $request->all()
                 )
             )
         ],Response::HTTP_CREATED);
     }
 
-    public function show(Student $Student)
+    public function show(Student $student)
     {
-        return new StudentResource($Student);
+        return new StudentResource($student);
     }
     
-    public function update(StudentRequest $request, Student $Student)
+    public function update(StudentRequest $request, Student $student)
     {   
 
-        $Student->update($request->all());
+        $student->update($request->all());
 
         return response([
-            'data' => new StudentResource($Student)
+            'data' => new StudentResource($student)
         ],Response::HTTP_CREATED);
 
     }
    
-    public function destroy(Student $Student)
+    public function destroy(Student $student)
     {
-        $Student->delete();
+        $student->delete();
         return response(null,Response::HTTP_NO_CONTENT);
     }
 

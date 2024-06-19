@@ -17,8 +17,8 @@ class ClassesResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'sections' => SectionResource::collection($this->whenLoaded('sections')),
-            'students' => StudentResource::collection($this->whenLoaded('students')),
+            //'sections' => SectionResource::collection($this->whenLoaded('sections')),
+            //'students' => StudentResource::collection($this->whenLoaded('students')),
             'user' => (new UserResource($this->whenLoaded('user'))),
         ];
     }
