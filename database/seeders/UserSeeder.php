@@ -16,11 +16,11 @@ class UserSeeder extends Seeder
     public function run(): void
     {
 
-        $users = User::factory()
-        ->count(10)
-        ->create();
-        $role = Role::findByName('panel_user');
-        $role->users()->attach($users);
+        // $users = User::factory()
+        // ->count(10)
+        // ->create();
+        // $role = Role::findByName('panel_user');
+        // $role->users()->attach($users);
 
         // $admins = User::factory()
         // ->count(2)

@@ -42,7 +42,7 @@ return [
             'delete_any',
             'force_delete',
             'force_delete_any',
-            'lock'
+            'lock',
         ],
 
         'page' => 'page',

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\api\v1\AuthController;
 use App\Http\Controllers\api\v1\CategoryController;
-use App\Http\Controllers\api\v1\ClassController;
+use App\Http\Controllers\api\v1\ClassesController;
 use App\Http\Controllers\api\v1\ProductController;
 use App\Http\Controllers\api\v1\ReviewController;
 use App\Http\Controllers\api\v1\SectionController;
@@ -26,7 +26,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
     Route::resource('reviews', ReviewController::class);
-    Route::resource('classes', ClassController::class);
+    Route::resource('classes', ClassesController::class);
     Route::resource('sections', SectionController::class);
     Route::resource('students', StudentController::class);
 

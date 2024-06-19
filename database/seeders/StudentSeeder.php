@@ -16,7 +16,7 @@ class StudentSeeder extends Seeder
         Student::withoutEvents(function ()  {        
             // normally
             Student::factory()
-            ->count(100)
+            ->count(1000)
             ->create();
         });
     }

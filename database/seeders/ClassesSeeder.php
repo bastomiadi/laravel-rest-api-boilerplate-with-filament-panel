@@ -9,7 +9,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
-class ClassSeeder extends Seeder
+class ClassesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

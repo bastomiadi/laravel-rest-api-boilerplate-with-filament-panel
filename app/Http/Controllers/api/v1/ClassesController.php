@@ -8,7 +8,7 @@ use App\Models\Classes;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class ClassController extends BaseController
+class ClassesController extends BaseController
 {
     public function __construct()
     {
